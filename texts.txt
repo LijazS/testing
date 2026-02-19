@@ -1,0 +1,74 @@
+2 types of Linux - red hat family, Debian family
+
+redhat family - cent OS, RHEL(red hat enterprise linux) OS, Amajon Linux, Suse Linux
+Debian family - Ubuntu, Debian OS
+	Note :- 1.whenever u work with Debian, if u want to install any packages,update,uninstall, we have to
+use "apt" repository
+		2. Whenver u work with red hat family, if u want to install,update, uninstall the packages, we 
+have to use the m repository
+
+Linux architecture -1.User interface
+		    2.Shell
+		    3.Kernal - manages- memory,porocess,networking,security
+		    4.Hardware
+
+Linux userspace:
+	/ - root directory/ filesystem
+	/home 
+	/bin
+	/etc
+	/var
+	/tmp
+	/usr
+	 
+commands -
+	to create new user - useradd #username
+	switch user - sudo su (sudo - super user do, su - switch user)
+
+1. File and Directory Management 
+These are the most fundamental commands used for navigating the filesystem and organizing data. 
+Navigation: cd (change directory), pwd (print working directory), and ls (list contents).
+Operations: mkdir (create directory), rmdir (remove empty directory), cp (copy), mv (move/rename), and rm (delete).
+Search: find (search for files by metadata) and locate (search by name in a database). 
+touch - create empty files
+cat - create files, append data, read data, overwrite the data
+vi - text editor, scripting, to create files, delete data, update data, insert data
+nano - text editor, to create, delete, update data.
+which - get location of installed packag
+
+
+
+2. Text Processing and Manipulation
+These tools allow you to search, filter, and transform text within files. 
+Viewing: cat (concatenate and display), head (show first lines), tail (show last lines), and pagers like less or more.
+Searching: grep is the primary tool for finding patterns in text.
+Editing/Parsing: awk (pattern scanning), sed (stream editor), and terminal text editors like vim or nano. 
+
+3. System Information and Monitoring
+Used to check hardware status, real-time system performance, and resource usage. 
+System Info: uname (kernel/OS info), hostname (system name), and uptime (how long the system has been running).
+Hardware: lscpu (CPU info), lsblk (disk/partition info), and free (memory usage).
+Monitoring: top or htop for real-time process tracking, and df for checking disk space. 
+
+4. User Management and Permissions
+Crucial for security and access control in multi-user environments. 
+
+Access Control: chmod (change file permissions), chown (change owner), and chgrp (change group).
+User Identity: whoami (current user), id (user/group IDs), and sudo (execute with superuser privileges).
+Account Management: useradd, userdel, and passwd (change passwords). 
+
+5. Networking and Connectivity
+These commands manage network interfaces and communication. 
+Troubleshooting: ping (test connectivity), traceroute (trace packet paths), and netstat (network statistics).
+Transfers: curl and wget for downloading web data, and scp or ftp for transferring files between hosts.
+Remote Access: ssh for secure remote login. 
+ifconfig - get our ip address
+netstat -tuln - get all listning ports and protocols  (t-tcp cons, u- udp cons,l- only listning ports,n- numerival)
+
+
+6. Package and Process Management
+Package Management: Used to install or update software. Commands vary by distribution: apt (Debian/Ubuntu), dnf/yum (Fedora/RHEL), and pacman (Arch).
+Process Control: ps (snapshot of running processes) and kill (terminate a process by ID)
+
+
+wats, why shell script as devops engineer
