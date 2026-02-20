@@ -1,4 +1,4 @@
-Permissions:
+Linux Permissions:
 	types - rwx
 	r - read
 	w - write
@@ -15,3 +15,21 @@ Permissions:
 	read-4
 	write-2
 	execute-1
+
+
+Vertical scaling - Increase existing servers memory/resources (scale up)
+Horizontal scaling - Increase number of servers (scale out)
+
+scale up - increase needed resources when traffic increases
+scale down - when traffic is coming down, we have to remove the additional servers, whatever we added based on the traffic.
+
+WE NEED NETWORK,SECURITY, LOAD BALANCERS, SERVERS/VIRTUAL MACHINES, STORAGE, DATABASES for an application(Iaas).
+
+Saas - fully functional software over the internet like google docs,dropbox etc
+paas - provides 
+Iaas -
+
+Web Tire - Always sits on public networks
+Application Tire - Always sits on private network (Contains the business logic of the application where we can process the logic)
+Database Tier - Has to be private network. 
+
