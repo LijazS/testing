@@ -1,0 +1,17 @@
+Permissions:
+	types - rwx
+	r - read
+	w - write
+	x - execute
+
+	groups -
+	current user(u) | group(g) | other(o)
+
+	commands - 
+		chmod - change permissions
+		chgrp - change group of file
+		chown - change owner of file
+
+	read-4
+	write-2
+	execute-1
