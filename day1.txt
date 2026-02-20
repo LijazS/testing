@@ -1,5 +1,7 @@
 aws - https://urldefense.com/v3/__https://d-9f676e8c09.awsapps.com/start/__;!!PdM5GIU!QmCu3cugwq_jwjVkmOLHW6yYywtEdESrk3OQbTExP7ApVErLOdrg2XwB6DbAMNy74DIvjWOmuH-g0n7Jh0be9FE$
 
+ip - 13.204.79.51
+
 2 types of Linux - red hat family, Debian family
 
 redhat family - cent OS, RHEL(red hat enterprise linux) OS, Amajon Linux, Suse Linux
