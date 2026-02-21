@@ -7,15 +7,20 @@ reigon -> vpc -> availability zone - subnets
 
 If the subnet associated with internet gateways, then it is called a public subnet.
 
-Internet gateway - Whenever the customer send requests , if the requests wont reach the server we need internet.
-to send internet to the server, we have to attach internet gateway
+Internet gateway - Whenever the customer send requests , if the requests wont reach the server - we need internet.
+* To send internet to the server, we have to attach internet gateway
 
 steps-
 	1.make vpc
 	2.make subnet
-	3.gateway
-	4.attach gateway to vpc
+	3.internet gateway (igw)
+	4.attach gateway to vpc 
 	5.ec2 with newly made vpc
 	6.routing table
 	7.subnet association
+
+FOR public subnets -
+	> open 0.0.0.0/0 as well in security group (inbound)
+	
+FOR private subnets dont open any internet needed ports
 	
