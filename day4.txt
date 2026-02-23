@@ -1,0 +1,46 @@
+Making a vpc, then a public subnet, then an ec2 instance inside the public subnet
+1.create a vpc
+2.create internet gateway, attach to the vpc
+3.create a subnet within vpc
+4.create a routing table, attach igw to route table
+5.attach routetable to public subnet (save association)
+6.create a ec2 instance in a public subnet within the custom vpc
+
+Private subnet
+1.create private subnet
+2.create a routing table, DONOT attach igw to route table
+3.attach Rt to private subnet (save association)
+
+
+public network - 
+bastion host server - server in public n without network
+tunneling - enables secure communication to transport data
+
+#######################################################################
+
+CONNECT Private server through Public Server
+ssh into public then ssh into private with the key pair
+
+FOR internet in private-
+	*needs NAT gateways
+	1.create NAT gateway for public subnet . (allocate elastic ip)
+	2.edit private subnets route table - add 0.0.0.0/0 target - nat gateway, then select newly made nat 			gateway
+	
+
+FOR exposing ports in private-
+	1.we need load balancer
+	* when we r creating load balancers within the vpc it has to be in always public network
+	* if we want to create load balancers , atleast we need 2 public subnets
+
+
+	
+
+Load balancer:
+	1.checks server health
+	2.distribute the load equally to all the servers
+	3. algos to decide traffic distribution - 1.Round robin,2.Least count
+	technically :- L7 - application load balancer(http/htps requests), L4 - Network load balancer(accepts 	tcp/udp protocols)
+
+to make ALB:
+	1.create alb (select public subnets for both)
+	2. make a target group - select private subnet u want exposed and serve requests and attach
