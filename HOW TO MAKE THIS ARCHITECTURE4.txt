@@ -1,0 +1,8 @@
+1. Create VPC
+2. Create 2 public subnets + 1 private subnet
+3. Create IGW → attach to VPC → add route 0.0.0.0/0→IGW in both public subnets' route tables
+4. Create NAT Gateway inside a public subnet (allocate Elastic IP)
+   → add route 0.0.0.0/0→NAT in private subnet's route table
+5. Launch EC2 in private subnet, deploy your app
+6. Create Target Group → point to private EC2
+   Create ALB (internet-facing) → span both public subnets → listener port 80 → target group
