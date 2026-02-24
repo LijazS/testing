@@ -1,0 +1,30 @@
+to manage data there are 2 types of db services we have
+1.RDS ( relational database service )
+2.DynamoDB ( handle unstructured data - in form of documents,tables )
+
+
+Today, you essentially built a mini full-stack deployment on AWS:
+
+Python FastAPI API with MySQL backend on a private subnet.
+
+Static HTML/JS front-end on a public subnet.
+
+Nginx as a reverse proxy and static file server.
+
+Solved several common DevOps issues:
+
+Dependency management.
+
+Database connectivity.
+
+Reverse proxy / CORS.
+
+Network reachability and process management.
+
+Remaining blockers:
+
+FastAPI backend must be accessible from Nginx → make sure uvicorn listens on 0.0.0.0.
+
+Security groups must allow EC2 (Nginx) → EC2 (FastAPI) communication.
+
+Nginx /api/ proxy properly configured → remove trailing slashes mismatch.
