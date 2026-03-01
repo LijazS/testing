@@ -1,0 +1,110 @@
+1.Availability of services
+2.Saclability
+3.Pay as u go
+
+EBS - elastic block storage
+S3 - simple storage service (object based)
+
+-> What is devops?
+	
+dev team - 1.req gathering
+	2.analysis
+	3.Design
+	4.Devolopment
+	5.Testing
+
+Operations Team -
+	1.Infrastructure Provisioning
+	2.deployment
+	3.Data backups
+	4.Monitoring
+	5.Operations
+
+Artifacts - packages/files
+Portaility - 
+
+Challenges of stoftware dev team (withot devops)-
+	1.Weighting time of code deployment
+	2.Implementing new features (dependency issues)
+
+Operations side problems -
+	1.Infrastructure Provisioning
+	2.MONITORING ISSUES
+	3.Data backups
+	4.depoloyments
+	
+Note :- Manual deployment is a time taking process
+
+devops is a - methodology,mindset, a tool
+Devops solves 3 problems -
+	1.COmmunication
+	2.Collaboration
+	3.automation
+
+
+DEVOPS
+
+SCM(GitHub) -> Code Quality(SonarCode/Checkmark/VeraCode) -> Build the Application (Java - Maven,NPM,Pypy etc)
+->  Deployment ( Containerize ) -> Kubernetes(orchestration Tools)  -> Monitoring Setup (Prometheus)
+
+GitOps - CI - GitHub Actions, CD - ArgoCD
+
+
+GitOps - With help of gitops model we can able to achieve 7 C's
+	1.Continuos Integration
+	2.Continuous Build
+	3.Continuous Deployment
+	4.Continuous Testing
+	5.Continuous Delivery
+	6.Continuous Monitoring
+	7.Continuous Improvement
+
+Docker - For making a platform independent application
+	- Portability of the applications
+
+*Every microservice will run independently in a single server
+
+Problem with a container -
+	1.Containers doesn't have a feature called self healing (recreating the container by itself)
+	2.Containers deosnt have a feature called load balancing
+	3.COntaineras doesn't support auto sacaling
+	4.Communication btwn the containers in 2 diff netowrks are very difficult
+
+Orchistration - means to manage the containers
+Note :- Kubernetes has self healing, load balancing, auto scaling, and is platform independent
+
+To deploy the microservices, we need a lot of infrastructure. Each and every microservice has to be deployed in a single server. because of that the cost is increasing. So in order to reduce the cost, we are moving to a technizue known as virtualization technique.
+
+				
+				___________________________
+				|VM1|	VM2|	|VM3|	|VM4|
+				___________________________
+					Hypervisor -V
+				___________________________
+					BASE OS
+				___________________________
+Hardware lvl virtualization		HARDWARE
+				___________________________
+
+Disadvantages with virtualization techniques:-
+	1.The guest OS is not as effective as Base OS
+	2.We are wasting the resources
+	3.If we need more resources, we need to invest more money.
+	4.Application portability is not guaranteed.
+	5.Manually we r allocating all the resources VM's
+
+To overcome all the challenges we use Containerization.
+
+
+DOCKER IMAGE:
+Is a template, it contains all the application dependencies, libraries, source code and also how to run the application in a container.
+What are the components required to run the application bundled together, deploying it in a single container.
+
+DOCKER CONTAINER:
+is like a virtual machine where we can deploy our docker images and run our workloads.
+*Container is a runnable instance of a docker image.
+
+docker images - all images
+docker ps - all running containers
+docker ps -a - all containers	
+docker create -it (i-interactive,t - terminal)

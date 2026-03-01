@@ -1,0 +1,66 @@
+There are 2 ways we can build custom docker images:
+	1.throguh docker commit
+	2.Through Dockerfile
+
+Note- create an nginx container , deploy your web application, inside the coantainer.deploy and expose to web . and convert thi container into a docker image. and push the docker image into 
+
+DOCKERFILE
+IMAGE BUILDING ISNTRUCTION:
+-> Starts with FROM 
+
+1.FROM instruction - defines the base image / parent image,
+	*Build the image on top of the FROM instruction.
+
+-> WORKDIR instruction - to set the WOrking directory (default directory in a container.) Whenever u copy files, all the files by default is copied into the WORKDIR
+
+-> User instruction - if u want to run the application as  non root user account, we are going to use the user instruction.
+
+
+2.COPY instruction - TO copy files from host to inside the docker image.
+Syntax - COPY [source] [destination]
+
+3.ADD instruction - JSUT like copy , but can be used to download and unzip
+
+4.RUN command - used to install dependencies, libraries, inside a container.
+	*To run a command inside the container, we use RUN command. 
+	*Its like for preparing the docker image
+
+5.MAINTAINERS command - Defining  who is the owner of docker image
+
+6.ON BUILD instruction - Running commands when building an inherited Dockerfile.
+
+7. .dockerignore - file used to ignore unnecessary files while building the docker image.
+
+CONTAINER RUNNING INSTRUCTIONS:
+
+1. CMD instruction - WIll define what code we need to run inside the container.
+	* It is the default executer whenever u copy the code inside the container, It is going to execute the code without any human involvement.
+Example: CMD ["node", "app.js"]
+	* CMD instruction will accept runtime arguments while u are building the application
+
+2. ENTRYPOINT instruction - is a default executer in a dockerfile. It is a direct entry point to the application.
+	* When container starts, this command always executes.
+	* Enterypoint instruction doesn't allow runtime arguments. 
+	* We are not able to override any arguments when building a docker image.
+
+3. EXPOSE instruction - On which port number you want to expose the application to the internet (Host Port number)
+	* It doesn't mean that this port number will automatically assign to the container. we have to explicitly assign port number using the -p tag.
+
+4. VOLUME instruction - Containers are ephemeral - no constant data will be stored
+	* if the container restarts or crashed, we are going to loose the data. 
+	* To take the backup of data , we are using VOLUMES.
+
+5. ENV instruction - env variables are used to store usernames, passwords, API keys, Tokens, Endpoints.
+
+6.SHELL instruction - on which shell you want to run the commands - ( ks,sh,bash etc ) will be defined inside the SHELL instruction
+
+
+
+If u want to write a docker file, there are 7 files we need to follow
+Step 1: Identify the base image of the application
+Step 2: Setup the WORKDIR
+Step 3: COPY the dependencies from local machine to docker image.(identify the dependencies first)
+Step 4: Install the dependencies.
+Step 5: COPY whole source code from local to docker image
+Step 6: Define the expose port number.
+Step 7: You have to run the application inside the conatiner

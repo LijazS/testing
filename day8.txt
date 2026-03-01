@@ -1,0 +1,55 @@
+docker create -it --name [name] [Image]   :- For making a docker container with a specific name (i- interactive,t-terminal)
+
+-> Each and every microservice will be converted into a docker image
+-> Each and every docker image will be deployed in a container
+
+Custom docker images - application docker images that we make
+In built docker images -
+
+
+There are 2 types of ports inside a container:
+	1.Host port number - This port number is user defined, we can mention any port number between 0-65535 (excluding reserved port numbers)
+(On which port number we want to expose to the internet.)
+	2.Container port number or application port number or target port number - This port number defined by software development team dedcieds taht on which port number they want to run the application.
+-> We dont have any rights to change port numbers.
+
+dockerfile - is a text document, it contains a set of instructions. to tell how to run the application inside the container
+
+
+BASIC DOCKER COMMANDS
+docker run -p (-p for port number) 3000:3000 (left side is host and right side is application port)
+docker run -d (detached mode or daemon mode)	
+docker rmi <image_id> - remove an image
+docker run -d <image>              # Run in background
+docker run -p 8080:80 <image>      # Port mapping
+docker run --name myapp <image>    # Name the container
+docker run -it <image> /bin/bash   # Interactive Shell
+docker stop <container>
+docker start <container>
+docker restart <container>
+docker rm <container_id>
+docker pause <container>
+docker unpause <container>
+
+DOCKER logs
+docker logs <container>
+docker logs -f <container>         # Live logs
+docker stats                       # Resource usage
+docker top <container>             # Processes inside container
+
+DOCKER Inspect and Exec
+docker inspect <name_or_id>
+docker exec -it <container> /bin/bash
+docker exec -it <container> sh
+docker exec -it <container> <command>
+
+DOCKER Cleanup commands
+docker system df                  # Docker disk usage
+docker system prune               # Remove unused data
+docker system prune -a            # Remove everything unused
+docker volume prune               # Clean unused volumes
+
+
+
+create a ubuntu container, inside th econtainer install a web server and deploy the application. and expose through the web
+
