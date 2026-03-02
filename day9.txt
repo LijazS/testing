@@ -63,4 +63,7 @@ Step 3: COPY the dependencies from local machine to docker image.(identify the d
 Step 4: Install the dependencies.
 Step 5: COPY whole source code from local to docker image
 Step 6: Define the expose port number.
-Step 7: You have to run the application inside the conatiner
+Step 7: You have to run the application inside the container
+
+WHAT IS DOCKER IMAGE LAYERS?
+WHAT IS MEANT BY UNION FILE SYSTEM?

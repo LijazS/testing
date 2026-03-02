@@ -1,0 +1,31 @@
+maven build life cycle:
+Goals-
+1.Generate resources(dependencies)
+2.Compile code
+3.Unit test
+4.Package (Build)
+5.Install (in local repo and artifactory )
+6.Deploy
+8.Clean
+
+eg:- mvn clean package
+
+wats dockerfile layers?
+while building a docker l=image how docker layers will create?
+where docker images installs the dependencies
+how temporary containers will create the runtime
+while deploying in a container how actually things works
+
+
+VOLUMES:
+
+Volume is a directory we r creating outside the container
+to take the backup of data we r using volumes even though if we lost ur container, we can take back ur data in a specific location
+Volume can only made when making the container.
+If the container already created we cant create volume to the existing containers.
+We can share volumes to multiple conatiners.
+
+There are 3 types of voluems we have.
+1.Anonymous volumes
+2.Named volumes
+3.Bind/Mount volumes
