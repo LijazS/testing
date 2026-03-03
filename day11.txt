@@ -1,0 +1,12 @@
+When you create a docker network it  automatically creates Linux network namespaces, veth, ip tables or nf tables and Linux bridge and Linux routing table.
+
+When u create a container it has their own network namespace and eth0, and routing table.
+
+DOCKER NETWORKING LAYERS:
+
+1. Container namespace
+2. Veth pair
+3. Linux bridge
+4. Host routing table
+5. Ip tables / NAT
+6. External networks
