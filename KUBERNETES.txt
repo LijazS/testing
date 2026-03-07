@@ -1,0 +1,54 @@
+docker optimization
+docker image size reduction
+docker networking eth,veth,host,none
+docker volumes, when to use anonymous volumes when to use bind/mount volumes
+
+k8s features -
+1. Orchestration
+2. Load balancing
+3. Auto scaling
+4. Auto healing ( self healing ) - its going to monitor the health of the nods, pods and the entire cluster health
+5. Kubernetes will perform the autoamtaic deployment of the application
+6. If u want to deploy the Kubernetes, we have to write Kubernetes manifesto files.
+7. Kubernetes is platform independent.
+
+
+MASTER NODE HAS -
+1. API Server
+2. Scheduler
+3. Controller Manager
+4. etcdf
+
+WOREKR HAS -
+1. Kubelet
+2. Container runtime
+3. Pod
+4. Kube Proxy
+
+
+K8s components:
+
+CONtROL PLANE COMPONENtS:
+Admin - writes the manifestos and passes commands to kubectl
+Kubectl - sends the request to api server
+api server - sends the request to the scheduler, 
+Scheduler - to check resources and nodes, and assigns the pods to nods.
+controller manager - node goes down,  it will recreate. it fixes stuff
+	Node controller: Responsible for noticing and responding when nodes go down.
+	Job controller: Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks 	to completion.
+	EndpointSlice controller: Populates EndpointSlice objects (to provide a link between Services and Pods).
+	ServiceAccount controller: Create default ServiceAccounts for new namespaces.
+etcd - It stores all the cluster data.
+
+NODE COMPONENTS:
+Kubelet - An agent that runs on each node in a cluster. It makes sure the containers in the pod are running
+Container runtime - responsible for running the container like containerd.
+Kube proxy - runs on each node in the cluster. Maintains network rules on the nodes.
+
+
+
+Manifesto syntax:
+apiVersion - Which version of the Kubernetes API you're using to create this object
+kind - What kind of object you want to create
+metadata - Data that helps uniquely identify the object, including a name string, UID, and optional namespace
+spec - What state you desire for the object
