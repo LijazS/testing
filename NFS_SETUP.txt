@@ -1,0 +1,38 @@
+1. install nfs
+
+sudo apt update
+sudo apt install nfs-kernel-server -y
+
+2. Create the directory
+
+sudo mkdir -p /data/my-storage
+sudo chown nobody:nogroup /data/my-storage
+sudo chmod 777 /data/my-storage
+
+3. edit /etc/exports
+
+/data/my-storage *(rw,sync,no_subtree_check,no_root_squash)
+
+4. Apply the exports
+
+sudo exportfs -a
+sudo systemctl restart nfs-kernel-server
+
+
+5. open port 2049 security group 
+
+
+6. Now check if exports is accessible from your cluster.
+
+showmount -e <public/private IP of the node>
+
+
+7. Check if mount works
+
+sudo mount -t nfs 10.0.1.169:/data/my-storage /home/ubuntu/nfs-test/
+
+
+NFS CSI DRIVER INSTALL
+
+helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+helm install csi-driver-nfs csi-driver-nfs/csi-driver-nfs --namespace kube-system --version 4.12.0
