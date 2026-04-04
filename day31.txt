@@ -1,0 +1,66 @@
+1. When u execute the kubectl command how the kubectl authenticating the cluster?????
+2. what is meant by context in Kubernetes?? hiow si i t playing a crucial role ? when coming to auth and authorization???
+3. what is meant by ceritfiacate, key in Kubernetes, wher can we find all the certificates in master node
+4. what is meant by oidc? how we are trying to give access to the cluster. if it is on permises cluster how we are going to maintain the OIDC?
+5. If i have 100 software developers how we are going to provide the Kubernetes cluster access to each and a=everyone?
+6. What is role? roleBinding? clusterRole? ClusterBinding?
+
+______________________________________________________________________________________________________________
+
+context links 3 things ( cluster + user + namespace )
+
+when u do kubectl get pods:
+authN and authZ happens
+
+AUTH
+- Who are you
+- establishing connection to api server and verifying current users identity
+
+  -> kubectl reads .kube config file
+  -> from current context , it gets cluster(API server endpoint) , user and ns
+  -> establish connection with API server using ca.crt
+  -> kubectl sends credintials (depends on sertup)
+	( admin.crt and key for local setup, bearer token with kubeadm, tokens with cloud)
+  -> API server verifies identity, checks CN,O
+
+
+authN done
+now authZ
+
+- What are you allowed to do.
+- After auth api server knows who is trying to commuincate, user and group
+- now it checks if the user has access to whatever command they used.
+
+  ->  Scans roles,rolebindings,clluterrole and cluster bindingsa
+
+
+OIDC
+
+- gets token from an Idp, digitally signed by the idp
+- now kubectl verifies user with bearer jwt instead of a crt
+
+
+Role 
+-ns scoped, defines what permissions a user or group needs.
+
+ClusterRole
+-cluster scoped,
+
+roleBinding
+- ns scoped
+- Can be done to assign to users to the defined roles
+- both role and cluster role can be binded to this.
+- cluster role will also get attached to a ns
+
+ClusterBinding
+used to bind users to clusterRole. to get cluster levevl access.
+
+
+
+TASK - create a group called development, users are murali mohan asad daniga Ashutosh.
+testing group users - likitha, Pavithra
+
+create them, instead of creating permission to particular users, assign permissions to groups.
+dev - access for pods, deployments
+tesing - services
+  

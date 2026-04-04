@@ -1,0 +1,5 @@
+what is api gateway?
+what is gateway API?
+diff between gateway api and api gateway?
+What is httproute?
+if ur application is deployed in a cluster, if u are using service type , clusterIP service , how we are able to expose the application to the internet?

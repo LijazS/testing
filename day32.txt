@@ -1,0 +1,12 @@
+Service Accounts
+
+When pod created -> kubernets assigns service accounts
+kubelet mounts them as projected volumes
+available inside pod at /var/run/secrets/Kubernetes.io/serviceaccouunt
+
+
+-> Architecture and Core Components.
+
+what, Where, Why, How and troubleshooting.
+internal behavior.
+
