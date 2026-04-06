@@ -1,0 +1,7 @@
+Draining the node:
+ 
+-> Done to evict all pods from a node, before you perform maintanence or upgrades.
+
+kubectl drain <node-to-drain> --ignore-daemonsets
+
+kubectl uncordon <node-to-uncordon>

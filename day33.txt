@@ -1,0 +1,33 @@
+ADVANCED SCHEDULING CONCEPTS
+++++++++++++++++++++++++++++
+
+nodeSelector:
+  
+  label a node.
+  put the label in nodeSelector tag when defining a pod or inside deployments template section.
+
+nodeaffinity:
+
+  aff
+  nodeaffinity
+  requ......
+  nodeselectorterms
+   matchexpressions
+     key
+     operator
+     value
+
+podaffinity
+  
+  add
+  podaff
+  requ.....
+   - labelselector
+     key and value
+     topologyKey
+
+
+podAntiAffinity
+ 
+
+  
